@@ -1,7 +1,8 @@
-import React, { Component, PropTypes } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import autoBind from 'react-autobind';
 
-class Suggestion extends Component {
+class Suggestion extends React.Component {
   constructor(props) {
     super(props);
     autoBind(this);
@@ -33,9 +34,7 @@ class Suggestion extends Component {
 
 Suggestion.propTypes = {
   className: PropTypes.string,
-  index: PropTypes.number,
   onMouseMove: PropTypes.func,
-  onSelection: PropTypes.func,
   suggestion: PropTypes.string,
   suggestionRenderer: PropTypes.func
 };

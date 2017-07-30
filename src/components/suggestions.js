@@ -1,10 +1,11 @@
-import React, { Component, PropTypes } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import { findDOMNode } from 'react-dom';
 import classNames from 'classnames';
 import autoBind from 'react-autobind';
 import Suggestion from './suggestion';
 
-class Suggestions extends Component {
+class Suggestions extends React.Component {
   constructor(props) {
     super(props);
     autoBind(this);
@@ -44,14 +45,13 @@ class Suggestions extends Component {
 
   renderSuggestion(suggestion, index) {
     const { props } = this;
-    const { styles } = props;
     const isFocused = props.focusedSuggestion === index;
 
     return (
       <Suggestion
         className={classNames({
-          [styles.suggestion]: true,
-          [styles.suggestionFocused]: isFocused
+          [props.styles.suggestion]: true,
+          [props.styles.suggestionFocused]: isFocused
         })}
         index={index}
         key={suggestion}
